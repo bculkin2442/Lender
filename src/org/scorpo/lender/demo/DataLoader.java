@@ -8,10 +8,13 @@ import au.com.bytecode.opencsv.CSVReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.SwingUtilities;
+import org.scorpo.lender.controller.model.ItemController;
 import org.scorpo.lender.controller.model.State;
 
 //Loads data from CSV files
@@ -31,8 +34,11 @@ public class DataLoader {
         if (ft.equals(EnumFileType.TYPES)) {
             loadTypes();
         }
+        if (ft.equals(EnumFileType.ITEMS)) {
+            loadItems();
+        }
     }
-
+    //Load types from .txt file using OpenCSV
     private void loadTypes() {
         try {
             CSVReader cs = new CSVReader(new FileReader("./TYPES.txt"));
@@ -44,5 +50,23 @@ public class DataLoader {
         } catch (IOException ex) {
             Logger.getLogger(DataLoader.class.getName()).log(Level.SEVERE, null, ex);
         }     
+    }
+    //Load items with OpenCSV
+    private void loadItems() {
+        try {
+            CSVReader cs = new CSVReader(new FileReader("./ITEMS.txt"));
+            cs.readNext();
+            List<String[]> readAll = cs.readAll();
+            for (String[] strings : readAll) {
+                try {
+                    ItemController.addItem(Integer.parseInt(strings[1]), strings[2], strings[3], new SimpleDateFormat("EEE, MMM d, ''yy").parse(strings[4]));
+                } catch (ParseException ex) {
+                    Logger.getLogger(DataLoader.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        } catch (IOException ex) {
+            Logger.getLogger(DataLoader.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
     }
 }
