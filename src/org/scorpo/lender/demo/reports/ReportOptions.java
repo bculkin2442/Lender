@@ -140,6 +140,46 @@ public class ReportOptions {
     public void setFile(boolean file) {
         this.file = file;
     }
+    //Should anything be done?
+    protected boolean okay;
+
+    /**
+     * Get the value of okay
+     *
+     * @return the value of okay
+     */
+    public boolean isOkay() {
+        return okay;
+    }
+
+    /**
+     * Set the value of okay
+     *
+     * @param okay new value of okay
+     */
+    public void setOkay(boolean okay) {
+        this.okay = okay;
+    }
+    //What file should be printed to?
+    protected String fleName;
+
+    /**
+     * Get the value of fleName
+     *
+     * @return the value of fleName
+     */
+    public String getFleName() {
+        return fleName;
+    }
+
+    /**
+     * Set the value of fleName
+     *
+     * @param fleName new value of fleName
+     */
+    public void setFleName(String fleName) {
+        this.fleName = fleName;
+    }
 
     
 }
