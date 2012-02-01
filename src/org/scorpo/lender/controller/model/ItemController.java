@@ -19,6 +19,10 @@ public class ItemController {
     //List of items
 
     private static List<Item> items;
+
+    public static List<Item> getItems() {
+        return items;
+    }
     //Current key
     private static int key;
     //Initialize both the variables
