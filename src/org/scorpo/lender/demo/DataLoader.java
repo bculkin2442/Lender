@@ -69,4 +69,12 @@ public class DataLoader {
         }
         
     }
+    private void loadPatrons() {
+        try {
+            CSVReader cs = new CSVReader(new FileReader("./PATRONS.txt"));
+            cs.readNext();
+        } catch (IOException ex) {
+            Logger.getLogger(DataLoader.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 }

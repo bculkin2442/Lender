@@ -129,8 +129,6 @@ public class DemoFrame extends javax.swing.JFrame {
         ReportOptionDialog reportOptionDialog = new ReportOptionDialog(this, false);
         //Set it visible
         reportOptionDialog.setVisible(true);
-        //Get the return
-        ReportOptions retStatus = reportOptionDialog.getReturnStatus();
     }//GEN-LAST:event_reportPrinterActionPerformed
     //Run the dempo
     private void demoRunnerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_demoRunnerActionPerformed
