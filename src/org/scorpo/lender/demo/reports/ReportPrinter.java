@@ -4,6 +4,12 @@
  */
 package org.scorpo.lender.demo.reports;
 
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.OutputStream;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**Printer class to print the report
  *
  * @author cromer33
@@ -28,7 +34,17 @@ public class ReportPrinter {
     }
 
     private void printToFile() {
-        throw new UnsupportedOperationException("Not yet implemented");
+        //If report is all items
+        if (rp.type.equals(ReportOptions.ReportType.ALL)) {
+            try {
+                
+                OutputStream os = new FileOutputStream(rp.fleName + ".txt");
+                
+            } catch (FileNotFoundException ex) {
+                Logger.getLogger(ReportPrinter.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            
+        }
     }
 
     private void printToPrinter() {
