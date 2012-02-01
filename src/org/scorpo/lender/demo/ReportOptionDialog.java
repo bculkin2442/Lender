@@ -18,9 +18,11 @@ import javax.swing.ButtonGroup;
 import javax.swing.InputMap;
 import javax.swing.JComponent;
 import javax.swing.KeyStroke;
+import javax.swing.SwingUtilities;
 import org.scorpo.lender.demo.reports.AllItemsOptionsPane;
 import org.scorpo.lender.demo.reports.CheckOutOptionsPane;
 import org.scorpo.lender.demo.reports.ReportOptions;
+import org.scorpo.lender.demo.reports.ReportPrinter;
 
 /**
  *
@@ -225,6 +227,7 @@ public class ReportOptionDialog extends javax.swing.JDialog {
     
     private void doClose(int retStatus) {
         setVisible(false);
+        returnStatus.notify();
         dispose();
     }
 

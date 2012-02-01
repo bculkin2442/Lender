@@ -10,6 +10,8 @@
  */
 package org.scorpo.lender.demo;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.SwingUtilities;
 import org.scorpo.lender.controller.model.State;
 import org.scorpo.lender.demo.reports.ReportOptions;
@@ -24,8 +26,6 @@ public class DemoFrame extends javax.swing.JFrame {
     /** Creates new form DemoFrame */
     public DemoFrame() {
         initComponents();
-        //DataLoader dl = new DataLoader(State.getState().redirect());
-        //dl.loadState();
     }
 
     /** This method is called from within the constructor to
@@ -131,6 +131,14 @@ public class DemoFrame extends javax.swing.JFrame {
         reportOptionDialog.setVisible(true);
         //Get the return
         ReportOptions retStatus = reportOptionDialog.getReturnStatus();
+        try {
+            retStatus.wait();
+        } catch (InterruptedException ex) {
+            Logger.getLogger(DemoFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        catch (IllegalMonitorStateException ex) {
+            Logger.getLogger(DemoFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
         
     }//GEN-LAST:event_reportPrinterActionPerformed
     //Run the dempo
