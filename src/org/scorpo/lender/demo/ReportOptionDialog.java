@@ -49,7 +49,7 @@ public class ReportOptionDialog extends javax.swing.JDialog {
 
             @Override
             public void actionPerformed(ActionEvent e) {
-                doClose(RET_CANCEL);
+                doClose();
             }
         });
         ButtonGroup bg = new ButtonGroup();
@@ -203,16 +203,19 @@ public class ReportOptionDialog extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void okButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_okButtonActionPerformed
-        doClose(RET_OK);
+        returnStatus.setOkay(true);
+        doClose();
     }//GEN-LAST:event_okButtonActionPerformed
     
     private void cancelButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelButtonActionPerformed
-        doClose(RET_CANCEL);
+        returnStatus.setOkay(false);
+        doClose();
     }//GEN-LAST:event_cancelButtonActionPerformed
 
     /** Closes the dialog */
     private void closeDialog(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_closeDialog
-        doClose(RET_CANCEL);
+        returnStatus.setOkay(false);
+        doClose();
     }//GEN-LAST:event_closeDialog
 
     private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
@@ -225,7 +228,7 @@ public class ReportOptionDialog extends javax.swing.JDialog {
         returnStatus.setType(ReportOptions.ReportType.CHECKOUTS);
     }//GEN-LAST:event_jRadioButton2ActionPerformed
     
-    private void doClose(int retStatus) {
+    private void doClose() {
         setVisible(false);
         returnStatus.doPrint();
         dispose();
