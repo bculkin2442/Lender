@@ -9,6 +9,10 @@ package org.scorpo.lender.demo.reports;
  * @author cromer33
  */
 public class ReportOptions {
+
+    public synchronized void doPrint() {
+        new ReportPrinter(this).print();
+    }
     //Type of report
     public enum ReportType {
         ALL,CHECKOUTS;

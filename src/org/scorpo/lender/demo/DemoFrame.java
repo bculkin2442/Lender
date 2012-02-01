@@ -131,15 +131,6 @@ public class DemoFrame extends javax.swing.JFrame {
         reportOptionDialog.setVisible(true);
         //Get the return
         ReportOptions retStatus = reportOptionDialog.getReturnStatus();
-        try {
-            retStatus.wait();
-        } catch (InterruptedException ex) {
-            Logger.getLogger(DemoFrame.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        catch (IllegalMonitorStateException ex) {
-            Logger.getLogger(DemoFrame.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
     }//GEN-LAST:event_reportPrinterActionPerformed
     //Run the dempo
     private void demoRunnerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_demoRunnerActionPerformed

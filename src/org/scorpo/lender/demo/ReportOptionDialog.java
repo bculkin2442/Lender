@@ -227,7 +227,7 @@ public class ReportOptionDialog extends javax.swing.JDialog {
     
     private void doClose(int retStatus) {
         setVisible(false);
-        returnStatus.notify();
+        returnStatus.doPrint();
         dispose();
     }
 
