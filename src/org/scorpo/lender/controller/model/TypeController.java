@@ -63,6 +63,15 @@ public class TypeController {
         throw new NullPointerException();
     }
 
+    public static String getDesForID(int id) throws NullPointerException {
+        for (Type typ : types) {
+            if (typ.getKey() == id) {
+                return typ.getDes();
+            }
+        }
+        throw new NullPointerException();
+    }
+    
     //Serialize to a CSV (Comma Seperated Values) file using the power of delegation 
     public static void saveToCSVFile(String dir, String nm) throws IOException {
         //Open up the thing we output to

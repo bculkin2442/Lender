@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.scorpo.lender.controller.model.ItemController;
-import org.scorpo.lender.controller.model.State;
+import org.scorpo.lender.controller.model.TypeController;
 import org.scorpo.lender.model.Item;
 
 /**Printer class to print the report
@@ -59,12 +59,21 @@ public class ReportPrinter {
         throw new UnsupportedOperationException("Not yet implemented");
     }
     private void printToStreamAll(Writer ws) throws IOException {
+        List<Item> items = ItemController.getItems();
         if(rp.allsort.equals(ReportOptions.AllSortType.TITLE)) {
-            List<Item> items = ItemController.getItems();
+            
             Collections.sort(items, new TitleComparator());
+        }
+        else {
+            Collections.sort(items, new TypeComparator());
+        }
+            //Print each item in order
             for (Item item : items) {
-                ws.write("");
+                ws.write(TypeController.getDesForID(item.getType()));
+                ws.write("\t");
+                ws.write(item.getTitle());
+                ws.write(item.getCreator() + "\t");
+                ws.write(item.getPublished().toString());
             }
         }
     }
-}
