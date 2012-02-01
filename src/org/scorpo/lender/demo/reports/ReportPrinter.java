@@ -7,6 +7,7 @@ package org.scorpo.lender.demo.reports;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.Writer;
+import java.util.Collections;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -57,10 +58,13 @@ public class ReportPrinter {
     private void printToScreen() {
         throw new UnsupportedOperationException("Not yet implemented");
     }
-    private void printToStreamAll(Writer ws) {
+    private void printToStreamAll(Writer ws) throws IOException {
         if(rp.allsort.equals(ReportOptions.AllSortType.TITLE)) {
             List<Item> items = ItemController.getItems();
-            items.
+            Collections.sort(items, new TitleComparator());
+            for (Item item : items) {
+                ws.write("");
+            }
         }
     }
 }

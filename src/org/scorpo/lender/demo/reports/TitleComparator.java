@@ -13,6 +13,9 @@ import org.scorpo.lender.model.Item;
  */
 public class TitleComparator implements Comparator<Item> {
 
+    public TitleComparator() {
+    }
+    
     @Override
     public int compare(Item o1, Item o2) {
         int i = o1.getTitle().compareToIgnoreCase(o2.getTitle());
