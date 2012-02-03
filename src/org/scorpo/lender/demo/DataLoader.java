@@ -5,7 +5,6 @@
 package org.scorpo.lender.demo;
 
 import au.com.bytecode.opencsv.CSVReader;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.text.ParseException;
@@ -15,23 +14,25 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.SwingUtilities;
 import org.scorpo.lender.controller.model.ItemController;
-import org.scorpo.lender.controller.model.PatronController;
 import org.scorpo.lender.controller.model.State;
-import org.scorpo.lender.view.listeners.PatronCreationListener;
 
 //Loads data from CSV files
 public class DataLoader {
     //The state to load data into
+
     private final State st;
     //Constructor
-    public DataLoader (State st) {
+
+    public DataLoader(State st) {
         this.st = st;
     }
     //Method to blanket load state
+
     public void loadState() {
         SwingUtilities.invokeLater(new DataLoaderWorker(this));
     }
     //Method to load specific part of state
+
     public synchronized void loadFile(EnumFileType ft) {
         if (ft.equals(EnumFileType.TYPES)) {
             loadTypes();
@@ -41,6 +42,7 @@ public class DataLoader {
         }
     }
     //Load types from .txt file using OpenCSV
+
     private void loadTypes() {
         try {
             CSVReader cs = new CSVReader(new FileReader("./TYPES.txt"));
@@ -51,9 +53,10 @@ public class DataLoader {
             }
         } catch (IOException ex) {
             Logger.getLogger(DataLoader.class.getName()).log(Level.SEVERE, null, ex);
-        }     
+        }
     }
     //Load items with OpenCSV
+
     private void loadItems() {
         try {
             CSVReader cs = new CSVReader(new FileReader("./ITEMS.txt"));
@@ -69,8 +72,10 @@ public class DataLoader {
         } catch (IOException ex) {
             Logger.getLogger(DataLoader.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+
     }
+    //Load patrons via OpenCSV
+
     private void loadPatrons() {
         try {
             CSVReader cs = new CSVReader(new FileReader("./PATRONS.txt"));
@@ -82,7 +87,7 @@ public class DataLoader {
                 } catch (Exception e) {
                 }
             }
-            
+
         } catch (IOException ex) {
             Logger.getLogger(DataLoader.class.getName()).log(Level.SEVERE, null, ex);
         }

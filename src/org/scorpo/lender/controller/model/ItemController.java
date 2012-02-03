@@ -19,6 +19,7 @@ public class ItemController {
     //List of items
 
     private static List<Item> items;
+    //How to get list of items
 
     public static List<Item> getItems() {
         return items;

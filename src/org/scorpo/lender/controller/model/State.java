@@ -68,7 +68,7 @@ public class State {
         }
         return inst;
     }
-    //Way to get the single instyance of State
+    //Way to get the single instance of State
 
     public static State getState() {
         return inst;
@@ -140,6 +140,6 @@ public class State {
         redirectSystemStreams();
         return inst;
     }
-    
+    //Timer for saving data
     Timer tm;
 }
