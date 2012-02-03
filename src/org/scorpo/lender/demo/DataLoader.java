@@ -15,7 +15,9 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.SwingUtilities;
 import org.scorpo.lender.controller.model.ItemController;
+import org.scorpo.lender.controller.model.PatronController;
 import org.scorpo.lender.controller.model.State;
+import org.scorpo.lender.view.listeners.PatronCreationListener;
 
 //Loads data from CSV files
 public class DataLoader {
@@ -73,6 +75,14 @@ public class DataLoader {
         try {
             CSVReader cs = new CSVReader(new FileReader("./PATRONS.txt"));
             cs.readNext();
+            List<String[]> readAll = cs.readAll();
+            for (String[] strings : readAll) {
+                try {
+                    State.getState().addPatron(strings[1], strings[2], strings[3], Integer.parseInt(strings[4]), strings[5], strings[6], Integer.parseInt(strings[7]), Integer.parseInt(strings[8]), Integer.parseInt(strings[9]), Integer.parseInt(strings[10]), strings[11]);
+                } catch (Exception e) {
+                }
+            }
+            
         } catch (IOException ex) {
             Logger.getLogger(DataLoader.class.getName()).log(Level.SEVERE, null, ex);
         }
