@@ -6,10 +6,7 @@ package org.scorpo.lender.demo;
 
 import java.util.TimerTask;
 
-/**
- *
- * @author cromer33
- */
+//Used to save data every 30 seconds
 public class DataSaverTask extends TimerTask {
 
     @Override

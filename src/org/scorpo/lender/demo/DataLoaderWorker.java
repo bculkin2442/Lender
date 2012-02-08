@@ -4,17 +4,14 @@
  */
 package org.scorpo.lender.demo;
 
-/**
- *
- * @author cromer33
- */
+//Used to cause loading to run in a different thread
 public class DataLoaderWorker implements Runnable {
     private DataLoader dl;
 
     public DataLoaderWorker(DataLoader dl) {
         this.dl = dl;
     }
-    
+    //Load everything
     @Override
     public void run() {
         dl.loadFile(EnumFileType.TYPES);

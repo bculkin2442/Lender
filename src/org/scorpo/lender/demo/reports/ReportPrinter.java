@@ -6,6 +6,7 @@ package org.scorpo.lender.demo.reports;
 
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.OutputStreamWriter;
 import java.io.Writer;
 import java.util.Collections;
 import java.util.List;
@@ -15,10 +16,8 @@ import org.scorpo.lender.controller.model.ItemController;
 import org.scorpo.lender.controller.model.TypeController;
 import org.scorpo.lender.model.Item;
 
-/**Printer class to print the report
- *
- * @author cromer33
- */
+//Printer class to print the report
+ 
 public class ReportPrinter {
     private ReportOptions rp;
 
@@ -34,7 +33,7 @@ public class ReportPrinter {
             printToPrinter();
         }
         else {
-            printToScreen();
+            printToScreenAll();
         }
     }
 
@@ -55,8 +54,12 @@ public class ReportPrinter {
         throw new UnsupportedOperationException("Not yet implemented");
     }
 
-    private void printToScreen() {
-        throw new UnsupportedOperationException("Not yet implemented");
+    private void printToScreenAll() {
+        try {
+            printToStreamAll(new OutputStreamWriter(System.out));
+        } catch (IOException ex) {
+            Logger.getLogger(ReportPrinter.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     private void printToStreamAll(Writer ws) throws IOException {
         List<Item> items = ItemController.getItems();

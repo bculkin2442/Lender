@@ -4,10 +4,7 @@
  */
 package org.scorpo.lender.demo;
 
-/**
- *
- * @author cromer33
- */
+// Enum for what a file contains
 public enum EnumFileType {
     ITEMS,TYPES,PATRONS,CHECKOUTS
 }

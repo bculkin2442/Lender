@@ -7,10 +7,7 @@ package org.scorpo.lender.demo.reports;
 import java.util.Comparator;
 import org.scorpo.lender.model.Item;
 
-/**
- *
- * @author cromer33
- */
+//Utility for comparing types
 public class TypeComparator implements Comparator<Item> {
     @Override
     public int compare(Item o1, Item o2) {

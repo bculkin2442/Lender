@@ -7,10 +7,7 @@ package org.scorpo.lender.demo.reports;
 import java.util.Comparator;
 import org.scorpo.lender.model.Item;
 
-/**
- *
- * @author cromer33
- */
+//Utility for sorting by types
 public class TitleComparator implements Comparator<Item> {
 
     public TitleComparator() {
