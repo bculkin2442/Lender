@@ -9,24 +9,28 @@ import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.io.Writer;
 import java.util.Collections;
+import java.util.Date;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import org.scorpo.lender.controller.model.CheckoutController;
 import org.scorpo.lender.controller.model.ItemController;
 import org.scorpo.lender.controller.model.TypeController;
+import org.scorpo.lender.demo.reports.ReportOptions.CheckSortType;
+import org.scorpo.lender.model.Checkout;
 import org.scorpo.lender.model.Item;
 
 //Printer class to print the report
  
 public class ReportPrinter {
-    private ReportOptions rp;
+    private static ReportOptions rp;
 
     public ReportPrinter(ReportOptions rp) {
-        this.rp = rp;
+        ReportPrinter.rp = rp;
     }
     
     public void print() {
-        if(rp.isFile()) {
+        if(ReportOptions.isFile()) {
             printToFile();
         }
         else {
@@ -36,10 +40,11 @@ public class ReportPrinter {
 
     private void printToFile() {
         //If report is all items
-        if (rp.type.equals(ReportOptions.ReportType.ALL)) {
+        if (ReportOptions.type.equals(
+                ReportOptions.ReportType.ALL)) {
                 try {
                     
-                   printToStreamAll(new FileWriter(rp.fleName + ".txt"));
+                   printToStreamAll(new FileWriter(ReportOptions.fleName + ".txt"));
                     
                 } catch (IOException ex) {
                     Logger.getLogger(ReportPrinter.class.getName()).log(Level.SEVERE, null, ex);
@@ -52,19 +57,25 @@ public class ReportPrinter {
 
     private void printToScreen() {
         try {
-            if(rp.type.equals(ReportOptions.ReportType.ALL)) {
+            if(ReportOptions.type.equals(
+                    ReportOptions.ReportType.ALL)) {
                 printToStreamAll(new OutputStreamWriter(System.out));
             }
             else {
                 
             }
-        } catch (IOException ex) {
+        } catch (Exception ex) {
             Logger.getLogger(ReportPrinter.class.getName()).log(Level.SEVERE, null, ex);
+            try {
+                printToStreamAll(new OutputStreamWriter(System.out));
+            } catch (IOException ex1) {
+                Logger.getLogger(ReportPrinter.class.getName()).log(Level.SEVERE, null, ex1);
+            }
         }
     }
     private void printToStreamAll(Writer ws) throws IOException {
         List<Item> items = ItemController.getItems();
-        if(rp.allsort.equals(ReportOptions.AllSortType.TITLE)) {
+        if(ReportOptions.allsort.equals(ReportOptions.AllSortType.TITLE)) {
             
             Collections.sort(items, new ItemTitleComparator());
         }
@@ -80,9 +91,28 @@ public class ReportPrinter {
                 ws.write(item.getPublished().toString());
             }
         }
-    private void printToStreamCheck(Writer ws) {
-        if(!rp.paged){
-            
+    private void printToStreamCheck(Writer ws) throws IOException {
+        List<Checkout> checkouts = CheckoutController.getCheckouts();
+        if(!ReportOptions.paged){
+            Collections.sort(checkouts,new CheckoutTypeComparator());
+        }
+        else {
+            if(ReportOptions.checksort.equals(ReportOptions.CheckSortType.PATRON)) {
+                Collections.sort(checkouts, new CheckoutPatronComparator());               
+            }
+            else {
+                Collections.sort(checkouts, new CheckoutDateComparator());
+                
+            }
+        }
+        if(ReportOptions.paged) {
+            if(CheckSortType.DUEDATE.equals(ReportOptions.checksort)) {
+                ws.write("Checkout sorted by date\n");
+                Date curr;
+                for (Checkout checkout : checkouts) {
+                    
+                }
+            }
         }
     }
-    }
+}

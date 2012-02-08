@@ -66,6 +66,15 @@ public class ItemController {
         }
         throw new IllegalArgumentException("Nonexistant Item");
     }
+    //Get key given id
+    public static int getKeyType(int key) {
+        for (Item item : items) {
+            if(item.getKey() == key) {
+                return item.getType();
+            }
+        }
+        return 0;
+    }
     //Check if an item esists
 
     public static boolean itemExists(String title) {

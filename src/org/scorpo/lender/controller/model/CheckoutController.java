@@ -11,6 +11,10 @@ import java.util.logging.Logger;
 
 //Deputy Controller in charge of creating Checkouts
 public class CheckoutController {
+
+    public static List<Checkout> getCheckouts() {
+        return checkouts;
+    }
     //The list of checkouts
 
     private static List<Checkout> checkouts;

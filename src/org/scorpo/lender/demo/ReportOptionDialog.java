@@ -12,13 +12,14 @@ package org.scorpo.lender.demo;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.AbstractAction;
 import javax.swing.ActionMap;
 import javax.swing.ButtonGroup;
 import javax.swing.InputMap;
 import javax.swing.JComponent;
 import javax.swing.KeyStroke;
-import javax.swing.SwingUtilities;
 import org.scorpo.lender.demo.reports.AllItemsOptionsPane;
 import org.scorpo.lender.demo.reports.CheckOutOptionsPane;
 import org.scorpo.lender.demo.reports.ReportOptions;
@@ -51,6 +52,7 @@ public class ReportOptionDialog extends javax.swing.JDialog {
         bg.add(jRadioButton1);
         bg.add(jRadioButton2);
         returnStatus = new ReportOptions();
+        ReportOptions.setPr(new ReportPrinter(returnStatus));
         ButtonGroup bg1 = new ButtonGroup();
         bg1.add(jRadioButton3);
         bg1.add(jRadioButton4);
@@ -84,6 +86,7 @@ public class ReportOptionDialog extends javax.swing.JDialog {
         jTextField1 = new javax.swing.JTextField();
         jRadioButton3 = new javax.swing.JRadioButton();
         jRadioButton4 = new javax.swing.JRadioButton();
+        jButton1 = new javax.swing.JButton();
 
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosing(java.awt.event.WindowEvent evt) {
@@ -186,6 +189,13 @@ public class ReportOptionDialog extends javax.swing.JDialog {
         jRadioButton4.setText("Screen");
         jRadioButton4.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
+        jButton1.setText("Print");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -194,6 +204,8 @@ public class ReportOptionDialog extends javax.swing.JDialog {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jButton1)
+                        .addGap(18, 18, 18)
                         .addComponent(okButton, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(cancelButton)
@@ -241,7 +253,8 @@ public class ReportOptionDialog extends javax.swing.JDialog {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(cancelButton)
-                            .addComponent(okButton)))
+                            .addComponent(okButton)
+                            .addComponent(jButton1)))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jRadioButton3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -255,38 +268,41 @@ public class ReportOptionDialog extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void okButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_okButtonActionPerformed
-        returnStatus.setOkay(true);
+        ReportOptions.setOkay(true);
         doClose();
     }//GEN-LAST:event_okButtonActionPerformed
     
     private void cancelButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelButtonActionPerformed
-        returnStatus.setOkay(false);
+        ReportOptions.setOkay(false);
         doClose();
     }//GEN-LAST:event_cancelButtonActionPerformed
 
     /** Closes the dialog */
     private void closeDialog(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_closeDialog
-        returnStatus.setOkay(false);
+        ReportOptions.setOkay(false);
         doClose();
     }//GEN-LAST:event_closeDialog
 
     private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
         jSplitPane1.setRightComponent(new AllItemsOptionsPane(returnStatus));
-        returnStatus.setType(ReportOptions.ReportType.ALL);
+        ReportOptions.setType(ReportOptions.ReportType.ALL);
     }//GEN-LAST:event_jRadioButton1ActionPerformed
 
     private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
         jSplitPane1.setRightComponent(new CheckOutOptionsPane(returnStatus));
-        returnStatus.setType(ReportOptions.ReportType.CHECKOUTS);
+        ReportOptions.setType(ReportOptions.ReportType.CHECKOUTS);
     }//GEN-LAST:event_jRadioButton2ActionPerformed
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        returnStatus.setFleName(jTextField1.getText());
+        ReportOptions.setFleName(jTextField1.getText());
     }//GEN-LAST:event_jTextField1ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+            ReportOptions.doPrint();
+    }//GEN-LAST:event_jButton1ActionPerformed
     
     private void doClose() {
         setVisible(false);
-        returnStatus.doPrint();
         dispose();
     }
 
@@ -336,6 +352,7 @@ public class ReportOptionDialog extends javax.swing.JDialog {
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton cancelButton;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

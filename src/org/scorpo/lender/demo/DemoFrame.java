@@ -129,6 +129,7 @@ public class DemoFrame extends javax.swing.JFrame {
         ReportOptionDialog reportOptionDialog = new ReportOptionDialog(this, false);
         //Set it visible
         reportOptionDialog.setVisible(true);
+        rep = reportOptionDialog.getReturnStatus();
     }//GEN-LAST:event_reportPrinterActionPerformed
     //Run the dempo
     private void demoRunnerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_demoRunnerActionPerformed
@@ -198,5 +199,5 @@ public class DemoFrame extends javax.swing.JFrame {
     private javax.swing.JButton reportPrinter;
     private javax.swing.JLabel titleLabel;
     // End of variables declaration//GEN-END:variables
-
+    private ReportOptions rep;
 }

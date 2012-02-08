@@ -9,30 +9,38 @@ package org.scorpo.lender.demo.reports;
  * @author cromer33
  */
 public class ReportOptions {
+    private static ReportPrinter pr;
 
-    public synchronized void doPrint() {
-        new ReportPrinter(this).print();
+    public static void setPr(ReportPrinter pr) {
+        ReportOptions.pr = pr;
     }
+    public static synchronized void doPrint() {
+        pr.print();
+    }
+
+    public ReportOptions() {
+    }
+    
     //Type of report
-    public enum ReportType {
+    public static enum ReportType {
         ALL,CHECKOUTS;
     }
     //How to sort on all items
-    public enum AllSortType {
+    public static enum AllSortType {
         TITLE,TYPE
     }
     //How to sort on checkouts
-    public enum CheckSortType {
+    public static enum CheckSortType {
         DUEDATE,TYPE,PATRON
     }
-    protected ReportType type;
+    protected static ReportType type;
 
     /**
      * Get the value of type
      *
      * @return the value of type
      */
-    public ReportType getType() {
+    public static ReportType getType() {
         return type;
     }
 
@@ -41,18 +49,18 @@ public class ReportOptions {
      *
      * @param type new value of type
      */
-    public void setType(ReportType type) {
-        this.type = type;
+    public static void setType(ReportType type) {
+        ReportOptions.type = type;
     }
     
-    protected AllSortType allsort;
+    protected static AllSortType allsort;
 
     /**
      * Get the value of allsort
      *
      * @return the value of allsort
      */
-    public AllSortType getAllsort() {
+    public static AllSortType getAllsort() {
         return allsort;
     }
 
@@ -61,18 +69,18 @@ public class ReportOptions {
      *
      * @param allsort new value of allsort
      */
-    public void setAllsort(AllSortType allsort) {
-        this.allsort = allsort;
+    public static void setAllsort(AllSortType allsort) {
+        ReportOptions.allsort = allsort;
     }
     
-    protected CheckSortType checksort;
+    protected static CheckSortType checksort;
 
     /**
      * Get the value of checksort
      *
      * @return the value of checksort
      */
-    public CheckSortType getChecksort() {
+    public static CheckSortType getChecksort() {
         return checksort;
     }
 
@@ -81,18 +89,18 @@ public class ReportOptions {
      *
      * @param checksort new value of checksort
      */
-    public void setChecksort(CheckSortType checksort) {
-        this.checksort = checksort;
+    public static void setChecksort(CheckSortType checksort) {
+        ReportOptions.checksort = checksort;
     }
     //Whether to use a seperate page
-    protected boolean paged;
+    protected static boolean paged;
 
     /**
      * Get the value of paged
      *
      * @return the value of paged
      */
-    public boolean isPaged() {
+    public static boolean isPaged() {
         return paged;
     }
 
@@ -101,18 +109,18 @@ public class ReportOptions {
      *
      * @param paged new value of paged
      */
-    public void setPaged(boolean paged) {
-        this.paged = paged;
+    public static void setPaged(boolean paged) {
+        ReportOptions.paged = paged;
     }
     //To print or not to print? This variable is the answer
-    protected boolean doPrint;
+    protected static boolean doPrint;
 
     /**
      * Get the value of doPrint
      *
      * @return the value of doPrint
      */
-    public boolean isDoPrint() {
+    public static boolean isDoPrint() {
         return doPrint;
     }
 
@@ -121,18 +129,18 @@ public class ReportOptions {
      *
      * @param doPrint new value of doPrint
      */
-    public void setDoPrint(boolean doPrint) {
-        this.doPrint = doPrint;
+    public static void setDoPrint(boolean doPrint) {
+        ReportOptions.doPrint = doPrint;
     }
     //Where to print to?
-    protected boolean file;
+    protected static boolean file;
 
     /**
      * Get the value of file
      *
      * @return the value of file
      */
-    public boolean isFile() {
+    public static boolean isFile() {
         return file;
     }
 
@@ -141,18 +149,18 @@ public class ReportOptions {
      *
      * @param file new value of file
      */
-    public void setFile(boolean file) {
-        this.file = file;
+    public static void setFile(boolean file) {
+        ReportOptions.file = file;
     }
     //Should anything be done?
-    protected boolean okay;
+    protected static boolean okay;
 
     /**
      * Get the value of okay
      *
      * @return the value of okay
      */
-    public boolean isOkay() {
+    public static boolean isOkay() {
         return okay;
     }
 
@@ -161,18 +169,18 @@ public class ReportOptions {
      *
      * @param okay new value of okay
      */
-    public void setOkay(boolean okay) {
-        this.okay = okay;
+    public static void setOkay(boolean okay) {
+        ReportOptions.okay = okay;
     }
     //What file should be printed to?
-    protected String fleName;
+    protected static String fleName;
 
     /**
      * Get the value of fleName
      *
      * @return the value of fleName
      */
-    public String getFleName() {
+    public static String getFleName() {
         return fleName;
     }
 
@@ -181,8 +189,8 @@ public class ReportOptions {
      *
      * @param fleName new value of fleName
      */
-    public void setFleName(String fleName) {
-        this.fleName = fleName;
+    public static void setFleName(String fleName) {
+        ReportOptions.fleName = fleName;
     }
 
     
