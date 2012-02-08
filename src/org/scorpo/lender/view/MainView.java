@@ -105,17 +105,6 @@ public class MainView extends javax.swing.JFrame {
         jLabel26 = new javax.swing.JLabel();
         chLastName = new javax.swing.JTextField();
         jButton10 = new javax.swing.JButton();
-        jPanel1 = new javax.swing.JPanel();
-        jTabbedPane4 = new javax.swing.JTabbedPane();
-        jPanel12 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jRadioButton4 = new javax.swing.JRadioButton();
-        jRadioButton5 = new javax.swing.JRadioButton();
-        jPanel9 = new javax.swing.JPanel();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jLabel27 = new javax.swing.JLabel();
-        jRadioButton2 = new javax.swing.JRadioButton();
-        jRadioButton3 = new javax.swing.JRadioButton();
 
         jLabel28.setText("jLabel28");
 
@@ -612,105 +601,6 @@ public class MainView extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Checkout", jPanel4);
 
-        jLabel1.setText("Sort By");
-
-        jRadioButton4.setText("Type");
-
-        jRadioButton5.setText("Title");
-
-        javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
-        jPanel12.setLayout(jPanel12Layout);
-        jPanel12Layout.setHorizontalGroup(
-            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel12Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
-                    .addGroup(jPanel12Layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jRadioButton5)
-                            .addComponent(jRadioButton4))))
-                .addContainerGap(274, Short.MAX_VALUE))
-        );
-        jPanel12Layout.setVerticalGroup(
-            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel12Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jRadioButton4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jRadioButton5)
-                .addContainerGap(103, Short.MAX_VALUE))
-        );
-
-        jTabbedPane4.addTab("Item Reports", jPanel12);
-
-        jRadioButton1.setText("Type");
-        jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton1ActionPerformed(evt);
-            }
-        });
-
-        jLabel27.setText("Sort By");
-
-        jRadioButton2.setText("Date");
-
-        jRadioButton3.setText("Patron");
-
-        javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
-        jPanel9.setLayout(jPanel9Layout);
-        jPanel9Layout.setHorizontalGroup(
-            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel9Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel27)
-                    .addGroup(jPanel9Layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jRadioButton2)
-                            .addComponent(jRadioButton3)
-                            .addComponent(jRadioButton1))))
-                .addContainerGap(266, Short.MAX_VALUE))
-        );
-        jPanel9Layout.setVerticalGroup(
-            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel9Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel27)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jRadioButton1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jRadioButton2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jRadioButton3)
-                .addContainerGap(80, Short.MAX_VALUE))
-        );
-
-        jTabbedPane4.addTab("Checkout Reports", jPanel9);
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jTabbedPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 348, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(584, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jTabbedPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(257, Short.MAX_VALUE))
-        );
-
-        jTabbedPane1.addTab("Reports", jPanel1);
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -728,52 +618,48 @@ public class MainView extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
         private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
-    }
-// TODO add your handling code here:}//GEN-LAST:event_jButton10ActionPerformed
 
-        private void chLastNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chLastNameActionPerformed
-    }
-// TODO add your handling code here:}//GEN-LAST:event_chLastNameActionPerformed
+    } }//GEN-LAST:event_jButton10ActionPerformed
 
-        private void itemNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemNameActionPerformed
-    }
-// TODO add your handling code here:}//GEN-LAST:event_itemNameActionPerformed
+private void chLastNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chLastNameActionPerformed
 
-        private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
-    }
-// TODO add your handling code here:}//GEN-LAST:event_jButton8ActionPerformed
+    }}//GEN-LAST:event_chLastNameActionPerformed
 
-        private void cityNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cityNameActionPerformed
-    }
-// TODO add your handling code here:}//GEN-LAST:event_cityNameActionPerformed
+private void itemNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemNameActionPerformed
 
-        private void lastNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lastNameActionPerformed
-    }
-// TODO add your handling code here:}//GEN-LAST:event_lastNameActionPerformed
+    }}//GEN-LAST:event_itemNameActionPerformed
 
-        private void itemSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemSaveActionPerformed
-    }
-// TODO add your handling code here:}//GEN-LAST:event_itemSaveActionPerformed
+private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
 
-        private void itemTypeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemTypeActionPerformed
-    }
-// TODO add your handling code here:}//GEN-LAST:event_itemTypeActionPerformed
+    }}//GEN-LAST:event_jButton8ActionPerformed
 
-        private void typeDescriptionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_typeDescriptionActionPerformed
-    }
-// TODO add your handling code here:}//GEN-LAST:event_typeDescriptionActionPerformed
+private void houseNumberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_houseNumberActionPerformed
 
-    private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton1ActionPerformed
+        // TODO add your handling code here:}//GEN-LAST:event_houseNumberActionPerformed
 
-    private void streetAddressActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_streetAddressActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_streetAddressActionPerformed
+private void streetAddressActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_streetAddressActionPerformed
 
-    private void houseNumberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_houseNumberActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_houseNumberActionPerformed
+        // TODO add your handling code here:}//GEN-LAST:event_streetAddressActionPerformed
+
+private void cityNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cityNameActionPerformed
+
+    }}//GEN-LAST:event_cityNameActionPerformed
+
+private void lastNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lastNameActionPerformed
+
+    }}//GEN-LAST:event_lastNameActionPerformed
+
+private void itemSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemSaveActionPerformed
+
+    }}//GEN-LAST:event_itemSaveActionPerformed
+
+private void itemTypeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemTypeActionPerformed
+
+    }}//GEN-LAST:event_itemTypeActionPerformed
+
+private void typeDescriptionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_typeDescriptionActionPerformed
+
+    }}//GEN-LAST:event_typeDescriptionActionPerformed
 
     /**
      * @param args the command line arguments
@@ -834,7 +720,6 @@ public class MainView extends javax.swing.JFrame {
     private javax.swing.JTextField itemType;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton8;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
@@ -853,7 +738,6 @@ public class MainView extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
-    private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel32;
@@ -863,9 +747,7 @@ public class MainView extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
-    private javax.swing.JPanel jPanel12;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
@@ -873,17 +755,10 @@ public class MainView extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
-    private javax.swing.JPanel jPanel9;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
-    private javax.swing.JRadioButton jRadioButton3;
-    private javax.swing.JRadioButton jRadioButton4;
-    private javax.swing.JRadioButton jRadioButton5;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JTabbedPane jTabbedPane3;
-    private javax.swing.JTabbedPane jTabbedPane4;
     private javax.swing.JTable jTable1;
     private javax.swing.JTextField lastName;
     private javax.swing.JTextField secondPhone;
