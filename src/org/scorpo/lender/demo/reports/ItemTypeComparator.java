@@ -7,16 +7,13 @@ package org.scorpo.lender.demo.reports;
 import java.util.Comparator;
 import org.scorpo.lender.model.Item;
 
-//Utility for sorting by types
-public class TitleComparator implements Comparator<Item> {
-
-    public TitleComparator() {
-    }
-    
+//Utility for comparing types
+public class ItemTypeComparator implements Comparator<Item> {
     @Override
     public int compare(Item o1, Item o2) {
-        int i = o1.getTitle().compareToIgnoreCase(o2.getTitle());
-        switch(i) {
+        Integer i = o1.getKey();
+        int rs = i.compareTo(o2.getKey());
+        switch(rs) {
             case -1:
                 return -1;
             case 0:
@@ -28,5 +25,4 @@ public class TitleComparator implements Comparator<Item> {
         }
         
     }
-    
 }

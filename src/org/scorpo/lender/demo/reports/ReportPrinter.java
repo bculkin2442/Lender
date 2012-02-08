@@ -29,11 +29,8 @@ public class ReportPrinter {
         if(rp.isFile()) {
             printToFile();
         }
-        if (rp.isDoPrint()) {
-            printToPrinter();
-        }
         else {
-            printToScreenAll();
+            printToScreen();
         }
     }
 
@@ -47,16 +44,20 @@ public class ReportPrinter {
                 } catch (IOException ex) {
                     Logger.getLogger(ReportPrinter.class.getName()).log(Level.SEVERE, null, ex);
                 }
-            }            
+            }
+        else {
+            
+        }
         }
 
-    private void printToPrinter() {
-        throw new UnsupportedOperationException("Not yet implemented");
-    }
-
-    private void printToScreenAll() {
+    private void printToScreen() {
         try {
-            printToStreamAll(new OutputStreamWriter(System.out));
+            if(rp.type.equals(ReportOptions.ReportType.ALL)) {
+                printToStreamAll(new OutputStreamWriter(System.out));
+            }
+            else {
+                
+            }
         } catch (IOException ex) {
             Logger.getLogger(ReportPrinter.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -65,10 +66,10 @@ public class ReportPrinter {
         List<Item> items = ItemController.getItems();
         if(rp.allsort.equals(ReportOptions.AllSortType.TITLE)) {
             
-            Collections.sort(items, new TitleComparator());
+            Collections.sort(items, new ItemTitleComparator());
         }
         else {
-            Collections.sort(items, new TypeComparator());
+            Collections.sort(items, new ItemTypeComparator());
         }
             //Print each item in order
             for (Item item : items) {
@@ -79,4 +80,9 @@ public class ReportPrinter {
                 ws.write(item.getPublished().toString());
             }
         }
+    private void printToStreamCheck(Writer ws) {
+        if(!rp.paged){
+            
+        }
+    }
     }
