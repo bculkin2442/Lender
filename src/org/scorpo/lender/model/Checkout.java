@@ -6,6 +6,7 @@
 package org.scorpo.lender.model;
 
 //~--- JDK imports ------------------------------------------------------------
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -101,7 +102,7 @@ public final class Checkout {
 
     @Override
     public String toString() {
-        return item + "," + patron + "," + checkedout + "," + due;
+        return item + "," + patron + "," + new SimpleDateFormat("MM/DD/YYYY").format(checkedout) + "," + due;
     }
 }
 

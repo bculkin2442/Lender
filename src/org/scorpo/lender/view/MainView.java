@@ -17,8 +17,6 @@ import org.scorpo.lender.controller.model.CloseListener;
 import org.scorpo.lender.controller.model.State;
 import org.scorpo.lender.view.listeners.*;
 
-//WARNING - DO NOT USE. CAUSES OutOfMemory ERRORS & CRASHES
-@Deprecated
 public class MainView extends javax.swing.JFrame {
 
     /** Creates new form MainView */
@@ -730,39 +728,39 @@ public class MainView extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
         private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
-        }
+    }
 // TODO add your handling code here:}//GEN-LAST:event_jButton10ActionPerformed
 
         private void chLastNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chLastNameActionPerformed
-        }
+    }
 // TODO add your handling code here:}//GEN-LAST:event_chLastNameActionPerformed
 
         private void itemNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemNameActionPerformed
-        }
+    }
 // TODO add your handling code here:}//GEN-LAST:event_itemNameActionPerformed
 
         private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
-        }
+    }
 // TODO add your handling code here:}//GEN-LAST:event_jButton8ActionPerformed
 
         private void cityNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cityNameActionPerformed
-        }
+    }
 // TODO add your handling code here:}//GEN-LAST:event_cityNameActionPerformed
 
         private void lastNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lastNameActionPerformed
-        }
+    }
 // TODO add your handling code here:}//GEN-LAST:event_lastNameActionPerformed
 
         private void itemSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemSaveActionPerformed
-        }
+    }
 // TODO add your handling code here:}//GEN-LAST:event_itemSaveActionPerformed
-        
+
         private void itemTypeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemTypeActionPerformed
-        }
+    }
 // TODO add your handling code here:}//GEN-LAST:event_itemTypeActionPerformed
-        
+
         private void typeDescriptionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_typeDescriptionActionPerformed
-        }
+    }
 // TODO add your handling code here:}//GEN-LAST:event_typeDescriptionActionPerformed
 
     private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
@@ -780,7 +778,7 @@ public class MainView extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[],final JFrame jf) {
+    public static void main(String args[], final JFrame jf) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -980,7 +978,4 @@ public class MainView extends javax.swing.JFrame {
     public JTextField getItemName() {
         return itemName;
     }
-    
-    
-    
 }

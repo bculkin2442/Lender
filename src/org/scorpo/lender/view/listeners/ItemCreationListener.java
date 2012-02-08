@@ -13,8 +13,7 @@ import javax.swing.JOptionPane;
 import org.scorpo.lender.controller.model.State;
 import org.scorpo.lender.view.MainView;
 
-//GUI listener for item creation. Logs any NPE thrown at this level. Not used anymore
-@Deprecated
+//GUI listener for item creation. 
 public class ItemCreationListener implements ActionListener {
     //View to obtain fields from
 
@@ -31,7 +30,7 @@ public class ItemCreationListener implements ActionListener {
         dt = new SimpleDateFormat("EEE, MMM d, ''yy");
         System.out.print("Listener Created(Item)\n");
     }
-    //Where events are recieved
+    //Where events are received
 
     @Override
     public void actionPerformed(ActionEvent e) {

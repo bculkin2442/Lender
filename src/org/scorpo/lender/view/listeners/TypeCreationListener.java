@@ -9,10 +9,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JTextField;
 import org.scorpo.lender.controller.model.State;
 
-/**
- *
- * @author cromer33
- */
+//Create types from GUI events
 public class TypeCreationListener implements ActionListener {
 
     public TypeCreationListener(JTextField desc, State ste) {
@@ -23,8 +20,11 @@ public class TypeCreationListener implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        //Add a type to state
         st.addType(des.getText());
     }
+    //State to add types to
     private State st;
+    //Text field for description
     private JTextField des;
 }

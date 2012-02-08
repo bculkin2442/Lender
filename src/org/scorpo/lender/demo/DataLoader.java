@@ -13,6 +13,7 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.SwingUtilities;
+import org.scorpo.lender.controller.model.CheckoutController;
 import org.scorpo.lender.controller.model.ItemController;
 import org.scorpo.lender.controller.model.State;
 
@@ -40,6 +41,9 @@ public class DataLoader {
         if (ft.equals(EnumFileType.ITEMS)) {
             loadItems();
         }
+        if (ft.equals(EnumFileType.PATRONS)) {
+            loadPatrons();
+        }
     }
     //Load types from .txt file using OpenCSV
 
@@ -60,6 +64,7 @@ public class DataLoader {
     private void loadItems() {
         try {
             CSVReader cs = new CSVReader(new FileReader("./ITEMS.txt"));
+            //Skip title
             cs.readNext();
             List<String[]> readAll = cs.readAll();
             for (String[] strings : readAll) {
@@ -91,5 +96,22 @@ public class DataLoader {
         } catch (IOException ex) {
             Logger.getLogger(DataLoader.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
+    private void loadCheckout() {
+        try {
+            CSVReader cs = new CSVReader(new FileReader("./ITEMS_OUT.txt"));
+            cs.readNext();
+            List<String[]> readAll = cs.readAll();
+            for (String[] strings : readAll) {
+                try {
+                    CheckoutController.addCheckout(new SimpleDateFormat("MM/DD/YYYY").parse(strings[3]), Integer.parseInt(strings[1]), Integer.parseInt(strings[2]));
+                } catch (ParseException ex) {
+                    Logger.getLogger(DataLoader.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        } catch (IOException ex) {
+            Logger.getLogger(DataLoader.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
     }
 }
