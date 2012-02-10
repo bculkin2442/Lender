@@ -7,6 +7,7 @@ package org.scorpo.lender.model;
 
 //~--- JDK imports ------------------------------------------------------------
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
@@ -112,7 +113,7 @@ public class Item {
     @Override
     public String toString() {
         return new Integer(key).toString() + "," + new Integer(type).toString() + "," + title + "," + creator + ","
-               + published.toString();
+               + new SimpleDateFormat("MM/DD/yyyy").format(published);
     }
 }
 

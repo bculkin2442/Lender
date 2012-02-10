@@ -102,7 +102,7 @@ public final class Checkout {
 
     @Override
     public String toString() {
-        return item + "," + patron + "," + new SimpleDateFormat("MM/DD/YYYY").format(checkedout) + "," + due;
+        return item + "," + patron + "," + new SimpleDateFormat("MM/DD/yyyy").format(checkedout) + "," + due;
     }
 }
 

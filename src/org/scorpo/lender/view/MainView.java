@@ -188,7 +188,7 @@ public class MainView extends javax.swing.JFrame {
         });
         itemSave.addActionListener(new ItemCreationListener(this, State.getState()));
 
-        jLabel2.setText("Correct Date Format is Wed, Jul 4, '01");
+        jLabel2.setText("Correct Date Format is MM/DD/yyyy");
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -213,7 +213,7 @@ public class MainView extends javax.swing.JFrame {
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(itemSave)
                             .addComponent(jLabel2))
-                        .addGap(604, 604, 604))))
+                        .addGap(626, 626, 626))))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -619,47 +619,47 @@ public class MainView extends javax.swing.JFrame {
 
         private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
 
-    } }//GEN-LAST:event_jButton10ActionPerformed
+    }//GEN-LAST:event_jButton10ActionPerformed
 
 private void chLastNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chLastNameActionPerformed
 
-    }}//GEN-LAST:event_chLastNameActionPerformed
+    }//GEN-LAST:event_chLastNameActionPerformed
 
 private void itemNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemNameActionPerformed
 
-    }}//GEN-LAST:event_itemNameActionPerformed
+    }//GEN-LAST:event_itemNameActionPerformed
 
 private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
 
-    }}//GEN-LAST:event_jButton8ActionPerformed
+    }//GEN-LAST:event_jButton8ActionPerformed
 
 private void houseNumberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_houseNumberActionPerformed
 
         // TODO add your handling code here:}//GEN-LAST:event_houseNumberActionPerformed
-
+}
 private void streetAddressActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_streetAddressActionPerformed
 
         // TODO add your handling code here:}//GEN-LAST:event_streetAddressActionPerformed
-
+}
 private void cityNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cityNameActionPerformed
 
-    }}//GEN-LAST:event_cityNameActionPerformed
+    }//GEN-LAST:event_cityNameActionPerformed
 
 private void lastNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lastNameActionPerformed
 
-    }}//GEN-LAST:event_lastNameActionPerformed
+    }//GEN-LAST:event_lastNameActionPerformed
 
 private void itemSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemSaveActionPerformed
 
-    }}//GEN-LAST:event_itemSaveActionPerformed
+    }//GEN-LAST:event_itemSaveActionPerformed
 
 private void itemTypeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemTypeActionPerformed
 
-    }}//GEN-LAST:event_itemTypeActionPerformed
+    }//GEN-LAST:event_itemTypeActionPerformed
 
 private void typeDescriptionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_typeDescriptionActionPerformed
 
-    }}//GEN-LAST:event_typeDescriptionActionPerformed
+    }//GEN-LAST:event_typeDescriptionActionPerformed
 
     /**
      * @param args the command line arguments

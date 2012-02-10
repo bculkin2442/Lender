@@ -27,7 +27,7 @@ public class ItemCreationListener implements ActionListener {
     public ItemCreationListener(MainView mn, State st) {
         this.mn = mn;
         this.st = st;
-        dt = new SimpleDateFormat("EEE, MMM d, ''yy");
+        dt = new SimpleDateFormat("DD/MM/yyyy");
         System.out.print("Listener Created(Item)\n");
     }
     //Where events are received
@@ -39,7 +39,7 @@ public class ItemCreationListener implements ActionListener {
             st.addItem(mn.getItemType().getText(), mn.getItemTitle().getText(), mn.getItemMisc().getText(), dt.parse(mn.getItemDate().getText()));
         } catch (ParseException ex) {
             //Tell people what went wrong
-            JOptionPane.showMessageDialog(mn, "Error: Invalid Date Format. Correct format is Wed, Jul 4, '01");
+            JOptionPane.showMessageDialog(mn, "Error: Invalid Date Format. Correct format is MM/DD/yyyy");
             Logger.getLogger(ItemCreationListener.class.getName()).log(Level.SEVERE, null, ex);
         } catch (NullPointerException npe) {
             //Log and show if a field is left blank

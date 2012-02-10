@@ -207,7 +207,7 @@
                                           <Component id="itemSave" min="-2" max="-2" attributes="0"/>
                                           <Component id="jLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
                                       </Group>
-                                      <EmptySpace min="-2" pref="604" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="626" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
@@ -310,7 +310,7 @@
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel2">
                       <Properties>
-                        <Property name="text" type="java.lang.String" value="Correct Date Format is Wed, Jul 4, &apos;01"/>
+                        <Property name="text" type="java.lang.String" value="Correct Date Format is MM/DD/yyyy"/>
                       </Properties>
                     </Component>
                   </SubComponents>
