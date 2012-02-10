@@ -46,8 +46,8 @@ public class ReportPrinter {
                     
                    printToStreamAll(new FileWriter(ReportOptions.fleName + ".txt"));
                     
-                } catch (IOException ex) {
-                    Logger.getLogger(ReportPrinter.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (Exception ex) {
+                    
                 }
             }
         else {
@@ -65,15 +65,15 @@ public class ReportPrinter {
                 
             }
         } catch (Exception ex) {
-            Logger.getLogger(ReportPrinter.class.getName()).log(Level.SEVERE, null, ex);
+            
             try {
                 printToStreamAll(new OutputStreamWriter(System.out));
-            } catch (IOException ex1) {
-                Logger.getLogger(ReportPrinter.class.getName()).log(Level.SEVERE, null, ex1);
+            } catch (Exception ex1) {
+                
             }
         }
     }
-    private void printToStreamAll(Writer ws) throws IOException {
+    private void printToStreamAll(Writer ws) throws Exception {
         List<Item> items = ItemController.getItems();
         if(ReportOptions.allsort.equals(ReportOptions.AllSortType.TITLE)) {
             

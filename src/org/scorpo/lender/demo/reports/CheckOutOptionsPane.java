@@ -97,17 +97,17 @@ public class CheckOutOptionsPane extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void typeRadioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_typeRadioActionPerformed
-        rp.setPaged(true);
-        rp.setChecksort(ReportOptions.CheckSortType.TYPE);
+        ReportOptions.setPaged(true);
+        ReportOptions.setChecksort(ReportOptions.CheckSortType.TYPE);
     }//GEN-LAST:event_typeRadioActionPerformed
 
     private void dateRadioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dateRadioActionPerformed
-        rp.setChecksort(ReportOptions.CheckSortType.DUEDATE);
-        rp.setPaged(true);
+        ReportOptions.setChecksort(ReportOptions.CheckSortType.DUEDATE);
+        ReportOptions.setPaged(true);
     }//GEN-LAST:event_dateRadioActionPerformed
 
     private void patronRadioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_patronRadioActionPerformed
-        rp.setChecksort(ReportOptions.CheckSortType.PATRON);
+        ReportOptions.setChecksort(ReportOptions.CheckSortType.PATRON);
     }//GEN-LAST:event_patronRadioActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

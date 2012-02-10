@@ -85,11 +85,11 @@ public class AllItemsOptionsPane extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
-        rep.setAllsort(ReportOptions.AllSortType.TITLE);
+        ReportOptions.setAllsort(ReportOptions.AllSortType.TITLE);
     }//GEN-LAST:event_jRadioButton1ActionPerformed
 
     private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
-        rep.setAllsort(ReportOptions.AllSortType.TYPE);
+        ReportOptions.setAllsort(ReportOptions.AllSortType.TYPE);
     }//GEN-LAST:event_jRadioButton2ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
